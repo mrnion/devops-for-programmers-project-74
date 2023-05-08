@@ -1,8 +1,10 @@
 version: '3'
 services:
   app:
-    build: .
+    image:  mrnion/devops-for-programmers-project-74
+    build:
+      context: .
+      dockerfile: Dockerfile.production
     ports:
       - 8080:8080
-    volumes:
-      - ./app
+    command: npm test
